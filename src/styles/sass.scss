@@ -1,0 +1,61 @@
+@import './mixin.scss';
+
+// 变量
+$border-color: #2c3e50;
+
+// 嵌套规则
+.item-rule ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  // overflow: auto;
+  li {
+    border: 1px solid $border-color {
+      left: 0;
+      right: 0;
+    }
+    margin: {
+      right: 10px;
+      left: 20px;
+      bottom: 20px;
+    };
+    padding: 4px;
+    float: left;
+    >a {
+      color: #42b983;
+    }
+  }
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+// 混合器
+.item-mixin {
+  >button {
+    @include button-default;
+    margin-bottom: 10px;
+  }
+}
+
+// 继承
+%text-style {
+  color: #42b983;
+  &:before {
+    content: "[ ";
+  }
+  &:after {
+    content: " ]";
+  }
+}
+.item-from {
+  .from {
+    @extend %text-style;
+  }
+  span:last-of-type {
+    @extend .from;
+    color: orange;
+  }
+}

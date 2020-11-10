@@ -1,0 +1,22 @@
+@mixin border-radius-4 {
+  border-radius: 4px;
+}
+@mixin opacify($color: #42b983) {
+  font-size: 14px;
+  background-color: #35ac76;
+}
+// 混合器作用域内的属性都是return的值，还可以为函数传参数并设置默认值
+@mixin button-default(
+  $background-color:#42b983,
+  $border-color:#42b983,
+  $color:#fff) {
+  background: $background-color;
+  border: 1px solid $border-color;
+  padding: 6px;
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    @include opacify;
+  }
+  @include border-radius-4;
+}
