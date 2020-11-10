@@ -15,9 +15,9 @@ let vm = new Vue({
 }).$mount("#app");
 
 router.beforeEach((to, from, next) => {
-  let loading = vm.$loading()
+  let loading = vm.$loading();
   setTimeout(() => {
-    loading.close()
-    next()
+    loading.close();
+    next();
   }, 1000 * Math.random());
-})
+});
