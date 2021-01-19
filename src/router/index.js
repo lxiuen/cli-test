@@ -28,6 +28,26 @@ const routes = [
     path: "/sass",
     name: "Sass",
     component: () => import("../views/Sass.vue")
+  },
+  {
+    path: "/brush-javaScript",
+    name: "javaScript",
+    component: () => import("../views/Brush-javaScript.vue")
+  },
+  {
+    path: "/css",
+    name: "css",
+    component: () => import("../views/css.vue")
+  },
+  {
+    path: "/grid",
+    name: "grid",
+    component: () => import("../views/Grid.vue")
+  },
+  {
+    path: "/rem",
+    name: "rem",
+    component: () => import("../views/Rem.vue")
   }
 ];
 

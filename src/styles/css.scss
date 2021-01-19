@@ -1,0 +1,39 @@
+%border-style {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  // flex-direction: row-reverse;
+  // flex-wrap: wrap-reverse;
+  flex-flow: row-reverse wrap-reverse;
+  justify-content: space-between;
+  align-items: center;
+  .item {
+    width: 100px;
+    background-color: orange;
+    @extend %border-style;
+    .empty-box {
+      height: 100px;
+      background-color: yellow;
+      &:before {
+        content: "[ 占位";
+      }
+      &:after {
+        content: " DIV]";
+      }
+      @extend %border-style
+    }
+  }
+}
+.flex9 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  .item {
+    width: 30%;
+    height: 100px;
+    margin: 2px;
+    background-color: yellow;
+  }
+}
