@@ -68,25 +68,26 @@ console.time("test");
 arr.mapUnique();
 console.timeEnd("test");
 
-
-// 
+//
 let computed = {
   a() {
-    console.log('a属读取')
+    console.log("a属读取");
   },
   b: {
     get() {
-      console.log('b属性 读取');
+      console.log("b属性 读取");
     },
     set() {
-      console.log('b属性 设置');
+      console.log("b属性 设置");
     }
   }
-}
-for(const key in computed) {
-  const userDef = computed[key]
-  const getter = typeof userDef === 'function' ? userDef : userDef.get
-  console.log(key,getter);
+};
+for (const key in computed) {
+  const userDef = computed[key];
+  const getter = typeof userDef === "function" ? userDef : userDef.get;
+  console.log(key, getter);
 }
 
+console.log("测试add ");
+console.log("测试add ");
 </script>
